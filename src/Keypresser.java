@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Keypresser extends JPanel implements KeyListener {
 
@@ -24,6 +25,11 @@ public class Keypresser extends JPanel implements KeyListener {
         super();
         setSize(getX, getY);
         addKeyListener(this);
+
+        // override AWT so VK_TAB can be received by KeyListener
+        KeyboardFocusManager kfm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        kfm.setDefaultFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, Collections.EMPTY_SET);
+        kfm.setDefaultFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, Collections.EMPTY_SET);
 
         sizeX = getX;
         sizeY = getY;
