@@ -26,11 +26,6 @@ public class Keypresser extends JPanel implements KeyListener {
         setSize(getX, getY);
         addKeyListener(this);
 
-        // override AWT so VK_TAB can be received by KeyListener
-        KeyboardFocusManager kfm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-        kfm.setDefaultFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, Collections.EMPTY_SET);
-        kfm.setDefaultFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, Collections.EMPTY_SET);
-
         sizeX = getX;
         sizeY = getY;
     }

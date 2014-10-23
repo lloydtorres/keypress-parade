@@ -50,6 +50,7 @@ public class KeypressParade extends JFrame implements ActionListener {
         setVisible(true);
 
         keyPanel = new Keypresser(sizeX,sizeY);
+        keyPanel.setFocusTraversalKeysEnabled(false); // override AWT TAB
         add(keyPanel);
 
         myTimer = new javax.swing.Timer(10,this); // update every 10 ms
